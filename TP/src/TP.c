@@ -64,8 +64,8 @@ int main(void) {
 				"\n Delanteros -> %d"
 				"\n3. Realizar todos los calculos"
 				"\n4. Informar todos los resultados"
-				"\n5. Salir", costoHospedaje, costoComida, costoTransporte, arqueros, defensores, mediocampistas, delanteros);
-		opcion = GetInt("\n\nSu opcion: ", "Opcion invalida intente nuevamente: ", 1, 5);
+				"\n5. Salir\n", costoHospedaje, costoComida, costoTransporte, arqueros, defensores, mediocampistas, delanteros);
+		opcion = GetInt("\nSu opcion: ", "Opcion invalida intente nuevamente\n", 1, 5);
 
 		switch(opcion){
 			case 1:
@@ -75,23 +75,23 @@ int main(void) {
 							"\n1.Costo hospedaje -> %.2f$"
 							"\n2.Costo de comida -> %.2f$"
 							"\n3.Costo de transporte -> %.2f$"
-							"\n4. Volver al menu principal", costoHospedaje, costoComida, costoTransporte);
-					opcionCostos = GetInt("\n\nSu opcion: ", "Opcion invalida intente nuevamente: ", 1, 4);
+							"\n4. Volver al menu principal\n", costoHospedaje, costoComida, costoTransporte);
+					opcionCostos = GetInt("\nSu opcion: ", "Opcion invalida intente nuevamente\n", 1, 4);
 					switch(opcionCostos){
 						case 1:
-							respuesta = CargarCosto(&costoHospedaje, "\n Ingrese el monto del costo de hospedaje: ", "El monto ingresado esta por debajo del minimo. Vuelva a intentar: ",REINTENTOS);
+							respuesta = CargarCosto(&costoHospedaje, "\n Ingrese el monto del costo de hospedaje: ", "El monto ingresado esta por debajo del minimo. Vuelva a intentar\n",REINTENTOS);
 							if(respuesta != 0){
 								printf("El costo no se ha podido cargar");
 							}
 							break;
 						case 2:
-							respuesta = CargarCosto(&costoComida, "\n Ingrese el monto del costo de comida: ", "El monto ingresado esta por debajo del minimo. Vuelva a intentar: ",REINTENTOS);
+							respuesta = CargarCosto(&costoComida, "\n Ingrese el monto del costo de comida: ", "El monto ingresado esta por debajo del minimo. Vuelva a intentar\n",REINTENTOS);
 							if(respuesta != 0){
 								printf("El costo no se ha podido cargar");
 							}
 							break;
 						case 3:
-							respuesta = CargarCosto(&costoTransporte, "\n Ingrese el monto del costo de transporte: ", "El monto ingresado esta por debajo del minimo. Vuelva a intentar: ",REINTENTOS);
+							respuesta = CargarCosto(&costoTransporte, "\n Ingrese el monto del costo de transporte: ", "El monto ingresado esta por debajo del minimo. Vuelva a intentar\n",REINTENTOS);
 							if(respuesta != 0){
 								printf("El costo no se ha podido cargar");
 							}
@@ -109,25 +109,25 @@ int main(void) {
 								"\n1.Arquero"
 								"\n2.Defensor"
 								"\n3.Mediocampista"
-								"\n4.Delantero");
-						opcionPosicion = GetInt("\n\nSu opcion: ", "Opcion invalida intente nuevamente: ", 1, 4);
+								"\n4.Delantero\n");
+						opcionPosicion = GetInt("\nSu opcion: ", "Opcion invalida intente nuevamente\n", 1, 4);
 						switch(opcionPosicion){
 							case 1:
-								errorAlCargar = CargarContador(&arqueros, 2, "Esta posición ya esta completa");
+								errorAlCargar = CargarContador(&arqueros, 2, "Esta posición ya esta completa\n");
 								break;
 							case 2:
-								errorAlCargar = CargarContador(&defensores, 8, "Esta posición ya esta completa");
+								errorAlCargar = CargarContador(&defensores, 8, "Esta posición ya esta completa\n");
 								break;
 							case 3:
-								errorAlCargar = CargarContador(&mediocampistas, 8, "Esta posición ya esta completa");
+								errorAlCargar = CargarContador(&mediocampistas, 8, "Esta posición ya esta completa\n");
 								break;
 							case 4:
-								errorAlCargar = CargarContador(&delanteros, 4, "Esta posición ya esta completa");
+								errorAlCargar = CargarContador(&delanteros, 4, "Esta posición ya esta completa\n");
 								break;
 						}
 					}while(errorAlCargar != 0);
 					//Ingreso de nº de camiseta
-					camiseta = GetInt("\n\nIngrese el numero de camiseta del jugador (no mayor a 99) : ", "Opcion invalida intente nuevamente\n", 1, 99);
+					camiseta = GetInt("\nIngrese el numero de camiseta del jugador (no mayor a 99) : ", "Opcion invalida intente nuevamente\n", 1, 99);
 					printf("la camiseta nº%d se ingreso correctamente\n", camiseta);
 					system("pause");
 					//Ingreso de la confederacion
@@ -138,8 +138,8 @@ int main(void) {
 								"\n3.CONCACAF -> %d"
 								"\n4.CONMEBOL -> %d"
 								"\n5.UEFA -> %d"
-								"\n6.OFC -> %d", afc, caf, concacaf, conmebol, uefa,ofc);
-						opcionConfederacion = GetInt("\n\nSu opcion: ", "Opcion invalida intente nuevamente: ", 1, 6);
+								"\n6.OFC -> %d\n", afc, caf, concacaf, conmebol, uefa,ofc);
+						opcionConfederacion = GetInt("\nSu opcion: ", "Opcion invalida intente nuevamente\n", 1, 6);
 						switch(opcionConfederacion){
 							case 1:
 								errorAlCargar = CargarContador(&afc, TOTAL_JUGADORES, "Maximo de jugadores alcanzado");
